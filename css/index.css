@@ -299,6 +299,10 @@ body.dark .login-btn {
     left: 0;
   }
 
+  .arrow {
+    padding-inline: 15px;
+  }
+
   main {
     margin-left: 0;
     height: auto;
