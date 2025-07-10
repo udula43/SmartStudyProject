@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Study Smart - Account</title>
+  <link rel="stylesheet" href="../css/account.css" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+  <section class="overview-hero" data-aos="fade-down">
+    <h1>Account Overview</h1>
+    <p>Welcome back, John Doe!</p>
+  </section>
+
+  <section class="overview-content" data-aos="fade-up">
+    <div class="card">
+      <div class="user-header">
+        <img src="../pics/profile.png" alt="User Avatar" class="avatar" />
+        <div class="user-text">
+          <h2>John Doe</h2>
+          <p class="email">john.doe@example.com</p>
+          <a href="profile.html"><button class="profile-btn">View Profile</button></a>
+        </div>
+      </div>
+      <ul class="user-details">
+        <li><strong>Member Since:</strong> January 2023</li>
+        <li><strong>Role:</strong> Student</li>
+        <li><strong>Completed Quizzes:</strong> 12</li>
+      </ul>
+    </div>
+
+    <div class="card stats-progress">
+      <h2>Quiz Performance</h2>
+      <canvas id="quizChart"></canvas>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    AOS.init({
+      duration: 700,
+      once: true,
+    });
+
+    // Chart.js example for quiz stats
+    const ctx = document.getElementById('quizChart').getContext('2d');
+    const quizChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['SFT', 'ET', 'ICT'],
+        datasets: [{
+          label: 'Scores',
+          data: [85, 90, 78],
+          backgroundColor: 'var(--accent-color)',
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { beginAtZero: true, max: 100 }
+        }
+      }
+    });
+  </script>
+
+  <!-- Dark mode sync script -->
+  <script>
+    window.addEventListener('message', (event) => {
+      if (event.data && typeof event.data.darkMode === 'boolean') {
+        if (event.data.darkMode) {
+          document.body.classList.add('dark-mode');
+        } else {
+          document.body.classList.remove('dark-mode');
+        }
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+      } else {
+        document.body.classList.remove('dark-mode');
+      }
+    });
+  </script>
+
+  <script>
+  document.addEventListener('click', () => {
+    parent.postMessage({ action: 'iframeClick' }, '*');
+  });
+</script>
+
+</body>
+</html>

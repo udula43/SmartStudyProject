@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Study Smart - Account Settings</title>
+  <link rel="stylesheet" href="../css/settings.css" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+  <section class="account-hero" data-aos="fade-down">
+    <h1>Account Settings</h1>
+    <p>Update your personal and login details</p>
+  </section>
+
+  <section class="account-content" data-aos="fade-up">
+    <form class="account-form" id="accountForm">
+      <div class="form-group">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" value="Johnathan Doe" required />
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" value="johndoe123" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" value="john.doe@example.com" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password <small>(leave blank to keep current password)</small></label>
+        <input type="password" id="password" name="password" />
+      </div>
+      <button type="submit" class="save-btn">Save Changes</button>
+    </form>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 700,
+      once: true,
+    });
+
+    document.getElementById('accountForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Your changes have been saved!');
+    });
+  </script>
+
+  <!-- Dark mode sync script -->
+  <script>
+    window.addEventListener('message', (event) => {
+      if (event.data && typeof event.data.darkMode === 'boolean') {
+        if (event.data.darkMode) {
+          document.body.classList.add('dark-mode');
+        } else {
+          document.body.classList.remove('dark-mode');
+        }
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+      } else {
+        document.body.classList.remove('dark-mode');
+      }
+    });
+  </script>
+
+  <script>
+  document.addEventListener('click', () => {
+    parent.postMessage({ action: 'iframeClick' }, '*');
+  });
+</script>
+
+</body>
+</html>
