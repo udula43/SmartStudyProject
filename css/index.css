@@ -52,7 +52,7 @@ html, body {
 
 .logo {
   height: 80px;
-  margin-right: 10px;
+  margin-right: 50px;
   cursor: pointer;
 }
 
@@ -253,7 +253,11 @@ body.dark .login-btn {
 /* Responsive */
 @media (max-width: 768px) {
   #header {
-    padding: 0px 20px;
+    padding: 0px 0px;
+  }
+
+  .logo {
+    margin: 0px; 
   }
 
   .menu-toggle {
@@ -281,11 +285,11 @@ body.dark .login-btn {
     position: fixed;
     top: 90px; /* match header height */
     left: -240px;
-    width: 220px;
+    width: 240px;
     max-height: calc(100vh - 90px);
     overflow-y: auto;
     background-color: #1c1f2b;
-    transition: left 0.3s ease;
+    transition: left 0.5s ease;
     z-index: 1000;
     border-radius: 0 20px 20px 0;
   }
