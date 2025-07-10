@@ -253,12 +253,12 @@ body.dark .login-btn {
 /* Responsive */
 @media (max-width: 768px) {
   #header {
-    padding: 0px 0px;
+    padding: 5px 0px;
     justify-content: space-arround;
   }
 
   .logo {
-    margin: 0px; 
+    margin-inline: 5px; 
   }
 
   .menu-toggle {
@@ -266,7 +266,7 @@ body.dark .login-btn {
   }
 
   nav {
-    gap: 10px;
+    gap: 5px;
   }
 
   #langBtn {
