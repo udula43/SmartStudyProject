@@ -254,6 +254,7 @@ body.dark .login-btn {
 @media (max-width: 768px) {
   #header {
     padding: 0px 0px;
+    justify-content: space-arround;
   }
 
   .logo {
