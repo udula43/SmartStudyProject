@@ -1,0 +1,171 @@
+/* home */
+:root {
+  --bg-color: #adffe2;
+  --text-color: #1f1f1f;
+  --accent-color: #00b894;
+  --hover-accent: #009e7a;
+  --card-bg: #ffffff;
+  --card-border: #00b894;
+  --feature-bg: #ecfff9;
+  --feature-text: #007b69;
+  --highlight: #1a1a1a;
+  --btn-bg: #00b894;
+  --btn-hover: #00a17e;
+  --btn-text: #ffffff;
+  --hero-bg: #70dab4;
+  --shadow: rgba(0, 0, 0, 0.05);
+  --border-color: #ddd;
+  --input-bg: #ffffff;
+  --input-border: #ccc;
+  --input-text: #1f1f1f;
+}
+
+body.dark-mode {
+  --bg-color: #313131;
+  --text-color: #eaeaea;
+  --accent-color: #00e6a6;
+  --hover-accent: #00ffc2;
+  --card-bg: #1a1a1a;
+  --card-border: #00e6a6;
+  --feature-bg: #151515;
+  --feature-text: #00ffc2;
+  --highlight: #d2fff1;
+  --btn-bg: #00e6a6;
+  --btn-hover: #00ffbf;
+  --btn-text: #111111;
+  --hero-bg: #0f0f0f;
+  --shadow: rgba(255, 255, 255, 0.05);
+  --border-color: #333;
+  --input-bg: #222222;
+  --input-border: #444;
+  --input-text: #f0f0f0;
+}
+
+
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  line-height: 1.7;
+}
+
+.hero {
+  background: var(--hero-bg);
+  color: var(--text-color);
+  padding: 10px 20px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+}
+
+.hero-image {
+  width: 600px;
+}
+
+.hero-text h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.brand {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.tagline {
+  font-size: 18px;
+  opacity: 0.95;
+}
+
+.section {
+  background: var(--card-bg);
+  padding: 40px 30px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--highlight);
+}
+
+.section-description {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.feature-card {
+  background: var(--feature-bg);
+  padding: 20px;
+  border-left: 5px solid var(--card-border);
+  border-radius: 8px;
+}
+
+.feature-card h3 {
+  margin-bottom: 10px;
+  color: var(--feature-text);
+}
+
+.benefit-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 15px;
+}
+
+.benefit-list li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.call-to-action {
+  text-align: center;
+  background-color: var(--feature-bg);
+}
+
+.home button {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  padding: 12px 28px;
+  font-size: 16px;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.explore-btn:hover {
+  background-color: var(--btn-hover);
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image {
+    max-width: 80%;
+  }
+
+  .section {
+    padding: 25px 20px;
+  }
+}
